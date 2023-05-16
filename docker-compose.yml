@@ -2,12 +2,20 @@ version: '3.8'
 
 services:
   kafka:
-    container_name: ecommercekafkadb-dev
+    container_name: ecmckafka-db
     image: bashj79/kafka-kraft
     ports:
       - "9092:9092"
     volumes:
       - kafka_data:/opt/kafka/kafka-logs
+
+  mongodb:
+    container_name: ecmcfilter-db
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
 
 volumes:
   kafka_data:

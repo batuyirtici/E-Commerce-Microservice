@@ -14,6 +14,7 @@ import java.util.UUID;
 @AllArgsConstructor
 public class UpdateProductResponse {
     private UUID id;
+    private UUID categoryId;
     private String name;
     private State state;
     private int quantity;
