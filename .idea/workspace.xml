@@ -4,58 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="960cf681-ddd8-47c8-a7e4-6383cc3840fa" name="Changes" comment="added stock-service transactions, model mapper">
-      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/microservice/ecommerce/commonpackage/events/stock/ProductCreatedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/microservice/ecommerce/commonpackage/events/stock/ProductDeletedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-server/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-server/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-server/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-server/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-server/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-server/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-server/src/main/java/microservice/ecommerce/discoveryserver/DiscoveryServerApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-server/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-server/src/test/java/microservice/ecommerce/discoveryserver/DiscoveryServerApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/src/main/java/microservice/ecommerce/filterservice/FilterServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/src/main/java/microservice/ecommerce/filterservice/api/controllers/FiltersController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/src/main/java/microservice/ecommerce/filterservice/business/abstracts/FilterService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/src/main/java/microservice/ecommerce/filterservice/business/concretes/FilterManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/src/main/java/microservice/ecommerce/filterservice/business/dto/responses/GetAllFiltersResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/src/main/java/microservice/ecommerce/filterservice/business/dto/responses/GetFilterResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/src/main/java/microservice/ecommerce/filterservice/business/kafka/consumer/StockConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/src/main/java/microservice/ecommerce/filterservice/entities/Filter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/src/main/java/microservice/ecommerce/filterservice/repository/FilterRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/src/test/java/microservice/ecommerce/filterservice/FilterServiceApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/api/controllers/ProductsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/kafka/producer/StockProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/rules/ProductBusinessRules.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-package/src/main/java/microservice/ecommerce/commonpackage/utils/constants/Paths.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-package/src/main/java/microservice/ecommerce/commonpackage/utils/constants/Paths.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/StockServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/StockServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/abstracts/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/abstracts/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/concretes/ProductManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/concretes/ProductManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/dto/requests/creates/CreateProductRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/dto/requests/creates/CreateProductRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/dto/requests/updates/UpdateProductRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/dto/requests/updates/UpdateProductRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/dto/responses/creates/CreateProductResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/dto/responses/creates/CreateProductResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/dto/responses/gets/GetAllProductsResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/dto/responses/gets/GetAllProductsResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/dto/responses/gets/GetProductResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/dto/responses/gets/GetProductResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/dto/responses/updates/UpdateProductResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/dto/responses/updates/UpdateProductResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/repository/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/resources/application.yml" afterDir="false" />
-    </list>
+    <list default="true" id="960cf681-ddd8-47c8-a7e4-6383cc3840fa" name="Changes" comment="added product transactions, filter-service and discovery-server(eureka server)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -171,12 +120,31 @@
       <option name="project" value="LOCAL" />
       <updated>1684196439712</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added product transactions, filter-service and discovery-server(eureka server)">
+      <created>1684243238675</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1684243238675</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="added stock-service transactions, model mapper" />
-    <option name="LAST_COMMIT_MESSAGE" value="added stock-service transactions, model mapper" />
+    <MESSAGE value="added product transactions, filter-service and discovery-server(eureka server)" />
+    <option name="LAST_COMMIT_MESSAGE" value="added product transactions, filter-service and discovery-server(eureka server)" />
   </component>
 </project>
