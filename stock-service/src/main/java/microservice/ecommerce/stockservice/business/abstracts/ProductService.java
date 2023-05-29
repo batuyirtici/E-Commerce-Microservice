@@ -6,6 +6,8 @@ import microservice.ecommerce.stockservice.business.dto.responses.creates.Create
 import microservice.ecommerce.stockservice.business.dto.responses.gets.GetAllProductsResponse;
 import microservice.ecommerce.stockservice.business.dto.responses.gets.GetProductResponse;
 import microservice.ecommerce.stockservice.business.dto.responses.updates.UpdateProductResponse;
+import microservice.ecommerce.stockservice.entities.Product;
+import microservice.ecommerce.stockservice.entities.enums.State;
 
 import java.util.List;
 import java.util.UUID;
@@ -17,4 +19,5 @@ public interface ProductService {
     UpdateProductResponse update (UUID id, UpdateProductRequest request);
     void delete (UUID id);
     GetProductResponse stateByChange(UUID id);
+    void changeStateByProductId(State state, UUID id);
 }

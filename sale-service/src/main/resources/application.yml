@@ -1,10 +1,10 @@
 spring:
   application:
-    name: stock-service
+    name: sale-service
   datasource:
     username: postgres
     password: '12345'
-    url: jdbc:postgresql://localhost:5432/ecmcstock-db
+    url: jdbc:postgresql://localhost:5432/ecmcsale-db
   jpa:
     properties:
       hibernate:

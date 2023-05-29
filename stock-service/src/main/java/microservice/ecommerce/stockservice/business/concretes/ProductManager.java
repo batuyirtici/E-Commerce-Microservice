@@ -3,6 +3,7 @@ package microservice.ecommerce.stockservice.business.concretes;
 import lombok.AllArgsConstructor;
 import microservice.ecommerce.commonpackage.events.stock.ProductCreatedEvent;
 import microservice.ecommerce.commonpackage.events.stock.ProductDeletedEvent;
+import microservice.ecommerce.commonpackage.kafka.producer.KafkaProducer;
 import microservice.ecommerce.commonpackage.utils.mappers.ModelMapperService;
 import microservice.ecommerce.stockservice.business.abstracts.ProductService;
 import microservice.ecommerce.stockservice.business.dto.requests.creates.CreateProductRequest;
@@ -11,9 +12,7 @@ import microservice.ecommerce.stockservice.business.dto.responses.creates.Create
 import microservice.ecommerce.stockservice.business.dto.responses.gets.GetAllProductsResponse;
 import microservice.ecommerce.stockservice.business.dto.responses.gets.GetProductResponse;
 import microservice.ecommerce.stockservice.business.dto.responses.updates.UpdateProductResponse;
-import microservice.ecommerce.stockservice.business.kafka.producer.StockProducer;
 import microservice.ecommerce.stockservice.business.rules.ProductBusinessRules;
-import microservice.ecommerce.stockservice.entities.Category;
 import microservice.ecommerce.stockservice.entities.Product;
 import microservice.ecommerce.stockservice.entities.enums.State;
 import microservice.ecommerce.stockservice.repository.ProductRepository;
@@ -28,7 +27,7 @@ public class ProductManager implements ProductService {
     private final ProductRepository repository;
     private final ModelMapperService mapper;
     private final ProductBusinessRules rules;
-    private final StockProducer producer;
+    private final KafkaProducer producer;
 
     @Override
     public List<GetAllProductsResponse> getAll(boolean includeState) {
@@ -113,8 +112,11 @@ public class ProductManager implements ProductService {
         return response;
     }
 
-    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    @Override
+    public void changeStateByProductId(State state, UUID id)
+    { repository.changeStateByProductId(state, id); }
+
+//  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
     private void stateChange(Product product) {
         if (product.getState().equals(State.Active)) { product.setState(State.Passive); }
@@ -129,9 +131,9 @@ public class ProductManager implements ProductService {
 
     private void sendKafkaProductCreatedEvent(Product createdProduct){
         ProductCreatedEvent event = mapper.forRequest().map(createdProduct, ProductCreatedEvent.class);
-        producer.sendMessage(event);
+        producer.sendMessage(event, "product-created");
     }
 
     private void sendKafkaProductDeletedEvent(UUID id)
-    { producer.sendMessage(new ProductDeletedEvent(id)); }
+    { producer.sendMessage(new ProductDeletedEvent(id),"product-deleted"); }
 }

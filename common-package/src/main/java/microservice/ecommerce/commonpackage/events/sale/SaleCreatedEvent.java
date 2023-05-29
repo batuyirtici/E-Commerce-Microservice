@@ -1,4 +1,4 @@
-package microservice.ecommerce.commonpackage.events.stock;
+package microservice.ecommerce.commonpackage.events.sale;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,4 +12,5 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProductDeletedEvent implements Event { private UUID productId; }
+public class SaleCreatedEvent implements Event { private UUID productId; }
+

@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import microservice.ecommerce.commonpackage.events.Event;
 
 import java.util.UUID;
 
@@ -11,7 +12,7 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProductCreatedEvent {
+public class ProductCreatedEvent implements Event {
     private UUID categoryId;
     private UUID productId;
     private String categoryName;
