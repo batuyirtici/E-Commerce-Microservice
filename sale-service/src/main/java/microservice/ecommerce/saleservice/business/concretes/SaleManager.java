@@ -1,6 +1,7 @@
 package microservice.ecommerce.saleservice.business.concretes;
 
 import lombok.AllArgsConstructor;
+import microservice.ecommerce.commonpackage.dto.CreateSalePaymentRequest;
 import microservice.ecommerce.commonpackage.events.sale.SaleCreatedEvent;
 import microservice.ecommerce.commonpackage.events.sale.SaleDeletedEvent;
 import microservice.ecommerce.commonpackage.kafka.producer.KafkaProducer;
@@ -56,13 +57,23 @@ public class SaleManager implements SaleService {
     public CreateSaleResponse add(CreateSaleRequest request) {
         Sale sale = mapper.forRequest().map(request, Sale.class);
 
-        sale.setId(UUID.randomUUID());
+        sale.setId(null);
         sale.setTotalPrice(getTotalPrice(sale));
         sale.setSaleTime(LocalDateTime.now());
 
+//      * * * * * Payment Step * * * * *
+        CreateSalePaymentRequest paymentRequest = mapper.forRequest()
+                .map(request.getPaymentRequest(), CreateSalePaymentRequest.class);
+
+        paymentRequest.setPrice(getTotalPrice(sale));
+        rules.ensurePaymentIsValid(paymentRequest);
+//       * * * * * End of Payment Step * * * * *
+
         repository.save(sale);
 
-        sendKafkaSaleCreatedMessage(request.getProductId()); // Sale Step
+//      * * * * * Sale Step * * * * *
+        sendKafkaSaleCreatedMessage(request.getProductId());
+//      * * * * * End of Sale Step * * * * *
 
         CreateSaleResponse response = mapper.forResponse().map(sale, CreateSaleResponse.class);
 

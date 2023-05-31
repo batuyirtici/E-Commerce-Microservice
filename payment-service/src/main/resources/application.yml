@@ -1,10 +1,10 @@
 spring:
   application:
-    name: sale-service
+    name: payment-service
   datasource:
     username: postgres
     password: '12345'
-    url: jdbc:postgresql://localhost:5432/ecmcsale-db
+    url: jdbc:postgresql://localhost:5432/ecmcpayment-db
   jpa:
     properties:
       hibernate:
@@ -28,10 +28,3 @@ eureka:
     prefer-ip-address: true
 server:
   port: 0
-
-resilience4j:
-  retry:
-    instances:
-      paymentValidation:
-        max-attempts: 5
-        wait-duration: 5s

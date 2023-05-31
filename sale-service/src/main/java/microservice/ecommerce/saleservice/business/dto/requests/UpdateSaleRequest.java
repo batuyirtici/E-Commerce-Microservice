@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Getter
@@ -16,5 +15,4 @@ public class UpdateSaleRequest {
     private UUID productId;
     private int price;
     private int quantity;
-    private LocalDateTime saleTime;
 }

@@ -4,8 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import microservice.ecommerce.commonpackage.dto.PaymentRequest;
 
-import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Getter
@@ -14,7 +14,7 @@ import java.util.UUID;
 @AllArgsConstructor
 public class CreateSaleRequest {
     private UUID productId;
-    private int price;
+    private double price;
     private int quantity;
-    private LocalDateTime saleTime;
+    private PaymentRequest paymentRequest;
 }
