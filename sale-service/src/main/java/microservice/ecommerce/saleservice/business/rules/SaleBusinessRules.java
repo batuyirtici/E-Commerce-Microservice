@@ -5,6 +5,7 @@ import microservice.ecommerce.commonpackage.dto.CreateSalePaymentRequest;
 import microservice.ecommerce.commonpackage.utils.dto.ClientResponse;
 import microservice.ecommerce.commonpackage.utils.exceptions.BusinessException;
 import microservice.ecommerce.saleservice.api.clients.payment.PaymentClient;
+import microservice.ecommerce.saleservice.api.clients.stock.StockClient;
 import microservice.ecommerce.saleservice.repository.SaleRepository;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,7 @@ import java.util.UUID;
 @Service
 @AllArgsConstructor
 public class SaleBusinessRules {
+    private final StockClient stockClient;
     private final SaleRepository repository;
     private final PaymentClient paymentClient;
 

@@ -2,12 +2,12 @@ package microservice.ecommerce.stockservice.api.controllers;
 
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
+import microservice.ecommerce.commonpackage.dto.GetProductResponse;
 import microservice.ecommerce.stockservice.business.abstracts.ProductService;
 import microservice.ecommerce.stockservice.business.dto.requests.creates.CreateProductRequest;
 import microservice.ecommerce.stockservice.business.dto.requests.updates.UpdateProductRequest;
 import microservice.ecommerce.stockservice.business.dto.responses.creates.CreateProductResponse;
 import microservice.ecommerce.stockservice.business.dto.responses.gets.GetAllProductsResponse;
-import microservice.ecommerce.stockservice.business.dto.responses.gets.GetProductResponse;
 import microservice.ecommerce.stockservice.business.dto.responses.updates.UpdateProductResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

@@ -1,12 +1,11 @@
 package microservice.ecommerce.stockservice.business.abstracts;
 
+import microservice.ecommerce.commonpackage.dto.GetProductResponse;
 import microservice.ecommerce.stockservice.business.dto.requests.creates.CreateProductRequest;
 import microservice.ecommerce.stockservice.business.dto.requests.updates.UpdateProductRequest;
 import microservice.ecommerce.stockservice.business.dto.responses.creates.CreateProductResponse;
 import microservice.ecommerce.stockservice.business.dto.responses.gets.GetAllProductsResponse;
-import microservice.ecommerce.stockservice.business.dto.responses.gets.GetProductResponse;
 import microservice.ecommerce.stockservice.business.dto.responses.updates.UpdateProductResponse;
-import microservice.ecommerce.stockservice.entities.Product;
 import microservice.ecommerce.stockservice.entities.enums.State;
 
 import java.util.List;

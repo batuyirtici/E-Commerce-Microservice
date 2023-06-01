@@ -4,49 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="960cf681-ddd8-47c8-a7e4-6383cc3840fa" name="Changes" comment="added sale-service">
-      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/microservice/ecommerce/commonpackage/dto/CreateSalePaymentRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/microservice/ecommerce/commonpackage/dto/PaymentRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/microservice/ecommerce/commonpackage/utils/dto/ClientResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/microservice/ecommerce/paymentservice/PaymentServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/microservice/ecommerce/paymentservice/adapters/FakePosServiceAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/microservice/ecommerce/paymentservice/api/controllers/PaymentsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/microservice/ecommerce/paymentservice/business/abstracts/PaymentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/microservice/ecommerce/paymentservice/business/abstracts/PosService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/microservice/ecommerce/paymentservice/business/concretes/PaymentManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/microservice/ecommerce/paymentservice/business/dto/dto/requests/CreatePaymentRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/microservice/ecommerce/paymentservice/business/dto/dto/requests/UpdatePaymentRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/microservice/ecommerce/paymentservice/business/dto/dto/responses/CreatePaymentResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/microservice/ecommerce/paymentservice/business/dto/dto/responses/GetAllPaymentsResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/microservice/ecommerce/paymentservice/business/dto/dto/responses/GetPaymentResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/microservice/ecommerce/paymentservice/business/dto/dto/responses/UpdatePaymentResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/microservice/ecommerce/paymentservice/business/rules/PaymentBusinessRules.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/microservice/ecommerce/paymentservice/entities/Payment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/microservice/ecommerce/paymentservice/repository/PaymentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/test/java/microservice/ecommerce/paymentservice/PaymentServiceApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sale-service/src/main/java/microservice/ecommerce/saleservice/api/clients/payment/PaymentClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sale-service/src/main/java/microservice/ecommerce/saleservice/api/clients/payment/PaymentClientFallback.java" afterDir="false" />
+    <list default="true" id="960cf681-ddd8-47c8-a7e4-6383cc3840fa" name="Changes" comment="added payment-service">
+      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/microservice/ecommerce/commonpackage/events/invoice/InvoiceCreatedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/invoice-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/invoice-service/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/invoice-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/invoice-service/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/invoice-service/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/invoice-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/invoice-service/src/main/java/microservice/ecommerce/invoiceservice/InvoiceServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/invoice-service/src/main/java/microservice/ecommerce/invoiceservice/api/controllers/InvoicesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/invoice-service/src/main/java/microservice/ecommerce/invoiceservice/business/abstracts/InvoiceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/invoice-service/src/main/java/microservice/ecommerce/invoiceservice/business/concretes/InvoiceManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/invoice-service/src/main/java/microservice/ecommerce/invoiceservice/business/dto/responses/GetAllInvoicesResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/invoice-service/src/main/java/microservice/ecommerce/invoiceservice/business/dto/responses/GetInvoiceResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/invoice-service/src/main/java/microservice/ecommerce/invoiceservice/business/kafka/consumer/RentalConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/invoice-service/src/main/java/microservice/ecommerce/invoiceservice/business/rules/InvoiceBusinessRules.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/invoice-service/src/main/java/microservice/ecommerce/invoiceservice/entities/Invoice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/invoice-service/src/main/java/microservice/ecommerce/invoiceservice/repository/InvoiceRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/invoice-service/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/invoice-service/src/test/java/microservice/ecommerce/invoiceservice/InvoiceServiceApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sale-service/src/main/java/microservice/ecommerce/saleservice/api/clients/stock/StockClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sale-service/src/main/java/microservice/ecommerce/saleservice/api/clients/stock/StockClientFallback.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-package/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common-package/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common-package/src/main/java/microservice/ecommerce/commonpackage/utils/constants/Paths.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-package/src/main/java/microservice/ecommerce/commonpackage/utils/constants/Paths.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sale-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sale-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sale-service/src/main/java/microservice/ecommerce/saleservice/SaleServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/sale-service/src/main/java/microservice/ecommerce/saleservice/SaleServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/microservice/ecommerce/paymentservice/business/rules/PaymentBusinessRules.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/microservice/ecommerce/paymentservice/business/rules/PaymentBusinessRules.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sale-service/src/main/java/microservice/ecommerce/saleservice/business/concretes/SaleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/sale-service/src/main/java/microservice/ecommerce/saleservice/business/concretes/SaleManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sale-service/src/main/java/microservice/ecommerce/saleservice/business/dto/requests/CreateSaleRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/sale-service/src/main/java/microservice/ecommerce/saleservice/business/dto/requests/CreateSaleRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sale-service/src/main/java/microservice/ecommerce/saleservice/business/dto/requests/UpdateSaleRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/sale-service/src/main/java/microservice/ecommerce/saleservice/business/dto/requests/UpdateSaleRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sale-service/src/main/java/microservice/ecommerce/saleservice/business/rules/SaleBusinessRules.java" beforeDir="false" afterPath="$PROJECT_DIR$/sale-service/src/main/java/microservice/ecommerce/saleservice/business/rules/SaleBusinessRules.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sale-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sale-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/api/controllers/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/api/controllers/ProductsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/abstracts/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/abstracts/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/concretes/ProductManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/concretes/ProductManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/dto/requests/creates/CreateProductRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/dto/requests/creates/CreateProductRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/dto/requests/updates/UpdateProductRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/dto/requests/updates/UpdateProductRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/dto/responses/creates/CreateProductResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/dto/responses/creates/CreateProductResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/dto/responses/gets/GetAllProductsResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/dto/responses/gets/GetAllProductsResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/dto/responses/gets/GetProductResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-package/src/main/java/microservice/ecommerce/commonpackage/dto/GetProductResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/dto/responses/updates/UpdateProductResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-service/src/main/java/microservice/ecommerce/stockservice/business/dto/responses/updates/UpdateProductResponse.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +83,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/batuy/Desktop/turkcell-java-bootcamp/e-commerce-microservice/sale-service/src/main/java/microservice/ecommerce/saleservice/api/clients",
+    "last_opened_file_path": "C:/Users/batuy/Desktop/turkcell-java-bootcamp/e-commerce-microservice/invoice-service",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
@@ -99,8 +97,8 @@
       <recent name="C:\Users\batuy\Desktop\turkcell-java-bootcamp\e-commerce-microservice" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="microservice.ecommerce.paymentservice.api.controllers" />
       <recent name="microservice.ecommerce.commonpackage.dto" />
+      <recent name="microservice.ecommerce.paymentservice.api.controllers" />
       <recent name="microservice.ecommerce.commonpackage.utils.dto" />
       <recent name="microservice.ecommerce.paymentservice.business.abstracts" />
     </key>
@@ -110,13 +108,13 @@
       <command value="mvn install" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.PaymentServiceApplication">
-    <configuration name="ApiGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="microservice.ecommerce.apigateway.ApiGatewayApplication" />
-      <module name="api-gateway" />
+  <component name="RunManager" selected="Application.InvoiceServiceApplication">
+    <configuration name="DiscoveryServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="microservice.ecommerce.discoveryserver.DiscoveryServerApplication" />
+      <module name="discovery-server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="microservice.ecommerce.apigateway.*" />
+          <option name="PATTERN" value="microservice.ecommerce.discoveryserver.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -124,12 +122,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DiscoveryServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="microservice.ecommerce.discoveryserver.DiscoveryServerApplication" />
-      <module name="discovery-server" />
+    <configuration name="InvoiceServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="microservice.ecommerce.invoiceservice.InvoiceServiceApplication" />
+      <module name="invoice-service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="microservice.ecommerce.discoveryserver.*" />
+          <option name="PATTERN" value="microservice.ecommerce.invoiceservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -178,11 +176,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SaleServiceApplication" />
         <item itemvalue="Application.PaymentServiceApplication" />
+        <item itemvalue="Application.SaleServiceApplication" />
+        <item itemvalue="Application.InvoiceServiceApplication" />
         <item itemvalue="Application.StockServiceApplication" />
         <item itemvalue="Application.DiscoveryServerApplication" />
-        <item itemvalue="Application.ApiGatewayApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -230,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685395625565</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added payment-service">
+      <created>1685497518389</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1685497518389</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -251,7 +256,8 @@
     <MESSAGE value="updated docker-compose.yml" />
     <MESSAGE value="added api-gateway" />
     <MESSAGE value="added sale-service" />
-    <option name="LAST_COMMIT_MESSAGE" value="added sale-service" />
+    <MESSAGE value="added payment-service" />
+    <option name="LAST_COMMIT_MESSAGE" value="added payment-service" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -265,7 +271,52 @@
           </properties>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/sale-service/src/main/java/microservice/ecommerce/saleservice/business/concretes/SaleManager.java</url>
+          <line>61</line>
+          <properties class="microservice.ecommerce.saleservice.business.concretes.SaleManager" method="add">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/payment-service/src/main/java/microservice/ecommerce/paymentservice/business/concretes/PaymentManager.java</url>
+          <line>90</line>
+          <properties class="microservice.ecommerce.paymentservice.business.concretes.PaymentManager" method="processSalePayment">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/payment-service/src/main/java/microservice/ecommerce/paymentservice/business/rules/PaymentBusinessRules.java</url>
+          <line>31</line>
+          <properties class="microservice.ecommerce.paymentservice.business.rules.PaymentBusinessRules" method="checkIfPaymentIsValid">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/payment-service/src/main/java/microservice/ecommerce/paymentservice/repository/PaymentRepository.java</url>
+          <line>10</line>
+          <properties class="microservice.ecommerce.paymentservice.repository.PaymentRepository" method="existsByCardHolderAndCardNumberAndCardExpirationMonthAndCardExpirationYearAndCardCvv">
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/payment-service/src/main/java/microservice/ecommerce/paymentservice/repository/PaymentRepository.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="microservice.ecommerce.paymentservice.business.rules.PaymentBusinessRules" memberName="repository" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

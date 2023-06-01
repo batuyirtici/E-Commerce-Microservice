@@ -1,6 +1,7 @@
 package microservice.ecommerce.stockservice.business.concretes;
 
 import lombok.AllArgsConstructor;
+import microservice.ecommerce.commonpackage.dto.GetProductResponse;
 import microservice.ecommerce.commonpackage.events.stock.ProductCreatedEvent;
 import microservice.ecommerce.commonpackage.events.stock.ProductDeletedEvent;
 import microservice.ecommerce.commonpackage.kafka.producer.KafkaProducer;
@@ -10,7 +11,6 @@ import microservice.ecommerce.stockservice.business.dto.requests.creates.CreateP
 import microservice.ecommerce.stockservice.business.dto.requests.updates.UpdateProductRequest;
 import microservice.ecommerce.stockservice.business.dto.responses.creates.CreateProductResponse;
 import microservice.ecommerce.stockservice.business.dto.responses.gets.GetAllProductsResponse;
-import microservice.ecommerce.stockservice.business.dto.responses.gets.GetProductResponse;
 import microservice.ecommerce.stockservice.business.dto.responses.updates.UpdateProductResponse;
 import microservice.ecommerce.stockservice.business.rules.ProductBusinessRules;
 import microservice.ecommerce.stockservice.entities.Product;

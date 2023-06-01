@@ -14,6 +14,7 @@ import java.util.UUID;
 @AllArgsConstructor
 public class UpdateProductRequest {
     private UUID categoryId;
+    private String categoryName;
     private String name;
     private int quantity;
     private double price;

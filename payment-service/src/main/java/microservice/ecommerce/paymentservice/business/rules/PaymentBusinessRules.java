@@ -33,8 +33,8 @@ public class PaymentBusinessRules {
         if (!repository.existsByCardHolderAndCardNumberAndCardExpirationMonthAndCardExpirationYearAndCardCvv(
                 request.getCardHolder(),
                 request.getCardNumber(),
-                request.getCardExpirationYear(),
                 request.getCardExpirationMonth(),
+                request.getCardExpirationYear(),
                 request.getCardCvv()
         )) {
             throw new BusinessException("NOT_VALID_PAYMENT");

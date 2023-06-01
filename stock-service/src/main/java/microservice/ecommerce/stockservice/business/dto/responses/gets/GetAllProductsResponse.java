@@ -15,6 +15,7 @@ import java.util.UUID;
 public class GetAllProductsResponse {
     private UUID id;
     private UUID categoryId;
+    private String categoryName;
     private String name;
     private State state;
     private int quantity;

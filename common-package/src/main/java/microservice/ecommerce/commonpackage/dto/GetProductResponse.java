@@ -1,10 +1,9 @@
-package microservice.ecommerce.stockservice.business.dto.responses.gets;
+package microservice.ecommerce.commonpackage.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import microservice.ecommerce.stockservice.entities.enums.State;
 
 import java.util.UUID;
 
@@ -15,8 +14,9 @@ import java.util.UUID;
 public class GetProductResponse {
     private UUID id;
     private UUID categoryId;
+    private String categoryName;
     private String name;
-    private State state;
+    private String state;
     private int quantity;
     private double price;
     private String description;

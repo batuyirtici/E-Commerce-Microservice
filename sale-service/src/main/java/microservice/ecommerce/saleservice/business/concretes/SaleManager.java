@@ -2,10 +2,14 @@ package microservice.ecommerce.saleservice.business.concretes;
 
 import lombok.AllArgsConstructor;
 import microservice.ecommerce.commonpackage.dto.CreateSalePaymentRequest;
+import microservice.ecommerce.commonpackage.dto.GetProductResponse;
+import microservice.ecommerce.commonpackage.dto.PaymentRequest;
+import microservice.ecommerce.commonpackage.events.invoice.InvoiceCreatedEvent;
 import microservice.ecommerce.commonpackage.events.sale.SaleCreatedEvent;
 import microservice.ecommerce.commonpackage.events.sale.SaleDeletedEvent;
 import microservice.ecommerce.commonpackage.kafka.producer.KafkaProducer;
 import microservice.ecommerce.commonpackage.utils.mappers.ModelMapperService;
+import microservice.ecommerce.saleservice.api.clients.stock.StockClient;
 import microservice.ecommerce.saleservice.business.abstracts.SaleService;
 import microservice.ecommerce.saleservice.business.dto.requests.CreateSaleRequest;
 import microservice.ecommerce.saleservice.business.dto.requests.UpdateSaleRequest;
@@ -27,6 +31,7 @@ import java.util.UUID;
 public class SaleManager implements SaleService {
     private final KafkaProducer producer;
     private final SaleBusinessRules rules;
+    private final StockClient stockClient;
     private final ModelMapperService mapper;
     private final SaleRepository repository;
 
@@ -75,6 +80,11 @@ public class SaleManager implements SaleService {
         sendKafkaSaleCreatedMessage(request.getProductId());
 //      * * * * * End of Sale Step * * * * *
 
+//      * * * * * Invoice Step * * * * *
+        GetProductResponse productResponse = stockClient.getByIdForProduct(request.getProductId());
+        sendKafkaInvoiceCreatedMessage(sale, paymentRequest, productResponse);
+//      * * * * * End of Invoice Step * * * * *
+
         CreateSaleResponse response = mapper.forResponse().map(sale, CreateSaleResponse.class);
 
         return response;
@@ -112,5 +122,22 @@ public class SaleManager implements SaleService {
     private void sendKafkaSaleDeletedMessage(UUID id){
         UUID productId = repository.findById(id).orElseThrow().getProductId();
         producer.sendMessage(new SaleDeletedEvent(productId), "sale-deleted");
+    }
+
+    private void sendKafkaInvoiceCreatedMessage
+            (Sale sale, PaymentRequest paymentRequest, GetProductResponse productResponse){
+        InvoiceCreatedEvent event = new InvoiceCreatedEvent();
+
+        event.setProductId(productResponse.getId());
+        event.setCategoryName(productResponse.getCategoryName());
+        event.setProductName(productResponse.getName());
+        event.setProductDescription(productResponse.getDescription());
+        event.setQuantity(sale.getQuantity());
+        event.setPrice(sale.getPrice());
+        event.setTotalPrice(sale.getTotalPrice());
+        event.setCardHolder(paymentRequest.getCardHolder());
+        event.setSaleTime(sale.getSaleTime());
+
+        producer.sendMessage(event, "invoice-created");
     }
 }
