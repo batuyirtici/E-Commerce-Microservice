@@ -1,5 +1,9 @@
 package microservice.ecommerce.saleservice.business.abstracts;
 
+import microservice.ecommerce.commonpackage.dto.SaleBasketResponse;
+import microservice.ecommerce.commonpackage.dto.basket.BasketTotalPriceResponse;
+import microservice.ecommerce.commonpackage.dto.basket.KafkaBasketResponse;
+import microservice.ecommerce.commonpackage.events.basket.BasketCreatedEvent;
 import microservice.ecommerce.saleservice.business.dto.requests.CreateSaleRequest;
 import microservice.ecommerce.saleservice.business.dto.requests.UpdateSaleRequest;
 import microservice.ecommerce.saleservice.business.dto.responses.CreateSaleResponse;

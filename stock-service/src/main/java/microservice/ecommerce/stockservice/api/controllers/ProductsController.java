@@ -3,6 +3,8 @@ package microservice.ecommerce.stockservice.api.controllers;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import microservice.ecommerce.commonpackage.dto.GetProductResponse;
+import microservice.ecommerce.commonpackage.dto.basket.KafkaBasketQuantityRequest;
+import microservice.ecommerce.commonpackage.dto.basket.KafkaBasketResponse;
 import microservice.ecommerce.stockservice.business.abstracts.ProductService;
 import microservice.ecommerce.stockservice.business.dto.requests.creates.CreateProductRequest;
 import microservice.ecommerce.stockservice.business.dto.requests.updates.UpdateProductRequest;
@@ -46,4 +48,9 @@ public class ProductsController {
     @PutMapping("/state/{id}")
     public GetProductResponse stateByChange(@PathVariable UUID id)
     { return service.stateByChange(id); }
+
+    @PostMapping("/basket/{id}")
+    public KafkaBasketResponse addToBasket(@PathVariable UUID id,
+                                           @RequestBody KafkaBasketQuantityRequest quantityRequest)
+    { return service.addToBasket(id, quantityRequest); }
 }

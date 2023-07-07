@@ -2,6 +2,9 @@ package microservice.ecommerce.stockservice.business.concretes;
 
 import lombok.AllArgsConstructor;
 import microservice.ecommerce.commonpackage.dto.GetProductResponse;
+import microservice.ecommerce.commonpackage.dto.basket.KafkaBasketQuantityRequest;
+import microservice.ecommerce.commonpackage.dto.basket.KafkaBasketResponse;
+import microservice.ecommerce.commonpackage.events.basket.BasketCreatedEvent;
 import microservice.ecommerce.commonpackage.events.stock.ProductCreatedEvent;
 import microservice.ecommerce.commonpackage.events.stock.ProductDeletedEvent;
 import microservice.ecommerce.commonpackage.kafka.producer.KafkaProducer;
@@ -29,6 +32,8 @@ public class ProductManager implements ProductService {
     private final ProductBusinessRules rules;
     private final KafkaProducer producer;
 
+    // TODO: sepetten toplam ile satın alım işlemi, sepet servisi kontrol etme
+
     @Override
     public List<GetAllProductsResponse> getAll(boolean includeState) {
         List<Product> products = filterProductByState(includeState);
@@ -48,6 +53,20 @@ public class ProductManager implements ProductService {
         Product product = repository.findById(id).orElseThrow();
 
         GetProductResponse response = mapper.forResponse().map(product, GetProductResponse.class);
+
+        return response;
+    }
+
+    @Override
+    public KafkaBasketResponse addToBasket(UUID id, KafkaBasketQuantityRequest quantityRequest) {
+        rules.ensureBasketIsValid();
+
+        Product product = repository.findById(id).orElseThrow();
+
+        sendKafkaBasketCreatedEvent(product, quantityRequest);
+
+        KafkaBasketResponse response = mapper.forResponse().map(product, KafkaBasketResponse.class);
+        response.setTotalPrice(response.getPrice() * quantityRequest.getQuantity());
 
         return response;
     }
@@ -116,6 +135,7 @@ public class ProductManager implements ProductService {
     public void changeStateByProductId(State state, UUID id)
     { repository.changeStateByProductId(state, id); }
 
+
 //  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
     private void stateChange(Product product) {
@@ -136,4 +156,16 @@ public class ProductManager implements ProductService {
 
     private void sendKafkaProductDeletedEvent(UUID id)
     { producer.sendMessage(new ProductDeletedEvent(id),"product-deleted"); }
+
+    private void sendKafkaBasketCreatedEvent(Product createdBasket, KafkaBasketQuantityRequest quantityRequest){
+        BasketCreatedEvent event = new BasketCreatedEvent();
+        event.setProductId(createdBasket.getId());
+        event.setCategoryName(createdBasket.getCategory().getName());
+        event.setProductName(createdBasket.getName());
+        event.setQuantity(quantityRequest.getQuantity());
+        event.setPrice(createdBasket.getPrice());
+        event.setDescription(createdBasket.getDescription());
+        event.setTotalPrice(event.getPrice() * event.getQuantity());
+        producer.sendMessage(event, "basket-created");
+    }
 }

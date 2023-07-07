@@ -20,4 +20,7 @@ public class Paths {
 
     public static class Invoice
     { public static final String ServiceBasePackage = "microservice.ecommerce.invoiceservice"; }
+
+    public static class Basket
+    { public static final String ServiceBasePackage = "microservice.ecommerce.basketservice"; }
 }

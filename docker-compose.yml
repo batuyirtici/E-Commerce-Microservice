@@ -22,8 +22,16 @@ services:
       - "27018:27018"
     volumes:
       - mongodb_data_invoice:/data/db
+  mongodb-basket:
+    container_name: ecmcbasket-db
+    image: mongo
+    ports:
+      - "27019:27019"
+    volumes:
+      - mongodb_data_basket:/data/db
 
 volumes:
   kafka_data:
   mongodb_data:
   mongodb_data_invoice:
+  mongodb_data_basket:

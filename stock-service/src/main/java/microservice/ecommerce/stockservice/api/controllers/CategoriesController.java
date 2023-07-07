@@ -1,9 +1,7 @@
 package microservice.ecommerce.stockservice.api.controllers;
 
-import jakarta.annotation.PostConstruct;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import microservice.ecommerce.stockservice.business.abstracts.CategoryService;
 import microservice.ecommerce.stockservice.business.dto.requests.creates.CreateCategoryRequest;
 import microservice.ecommerce.stockservice.business.dto.requests.updates.UpdateCategoryRequest;

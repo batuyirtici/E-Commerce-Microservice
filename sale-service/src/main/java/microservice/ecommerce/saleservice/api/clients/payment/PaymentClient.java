@@ -10,6 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 @FeignClient(name = "payment-service", fallback = PaymentClientFallback.class)
 public interface PaymentClient {
     @Retry(name = "paymentValidation")
-    @PostMapping(value = "api/payments/payment-validation")
+    @PostMapping(value = "/api/payments/payment-validation")
     ClientResponse paymentValidation(@RequestBody CreateSalePaymentRequest request);
 }

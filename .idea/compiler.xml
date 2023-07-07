@@ -16,10 +16,12 @@
         <module name="invoice-service" />
         <module name="api-gateway" />
         <module name="filter-service" />
+        <module name="basket-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="api-gateway" target="17" />
+      <module name="basket-service" target="17" />
       <module name="common-package" target="17" />
       <module name="config-server" target="17" />
       <module name="discovery-server" target="17" />
@@ -33,6 +35,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api-gateway" options="-parameters" />
+      <module name="basket-service" options="-parameters" />
       <module name="common-package" options="-parameters" />
       <module name="config-server" options="-parameters" />
       <module name="discovery-server" options="-parameters" />
