@@ -32,8 +32,6 @@ public class ProductManager implements ProductService {
     private final ProductBusinessRules rules;
     private final KafkaProducer producer;
 
-    // TODO: sepetten toplam ile satın alım işlemi, sepet servisi kontrol etme
-
     @Override
     public List<GetAllProductsResponse> getAll(boolean includeState) {
         List<Product> products = filterProductByState(includeState);
